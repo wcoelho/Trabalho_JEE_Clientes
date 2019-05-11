@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+
 /**
  * Entity implementation class for Entity: ClienteEntity
  *
@@ -24,10 +25,10 @@ public class ClienteEntity implements Serializable {
 	private Long id;
 
 	@Size(min = 15, max = 300, message = "Nome deve ter de 15 a 300 caracteres")
-	private String nome;
+	String nome;
 
 	@Size(min = 11, max = 11, message = "CPF deve ter 11 caracteres")
-	private String cpf;
+	String cpf;
 
 	private Date dataNascimento;
 

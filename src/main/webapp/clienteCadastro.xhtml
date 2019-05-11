@@ -8,41 +8,39 @@
    <ui:define name="content">
       <h:form id="formCliente">
       	<h:messages id="messages" infoStyle="color: blue" errorStyle="color:red" style="width: 100%" />
-         <h2>CLIENTE</h2>
-         <table>
+         <h2>Cadastro de Cliente</h2>
+         <table cellspacing="5" cellpadding="5">
             <tr>
-               <th style="text-align: right;">
-                  <h:outputLabel for="nome" value="Nome do Cliente:"/>
-               </th>
+               <th style="text-align: right;"/>
                <td>
-                  <h:inputText id="nome" value="#{ClientBean.clienteResource.nome}"/>
+                  <h:inputText id="nome" value="#{ClientBean.clienteResource.nome}">
+                  	<f:passThroughAttribute name="placeholder" value="Nome" />
+                  </h:inputText>
                   <h:message for="nome" errorClass="invalid"/>
                </td>
             </tr>
             <tr>
-               <th style="text-align: right;">
-                  <h:outputLabel for="cpf" value="CPF do Cliente:"/>
-               </th>
-               <td>
-                  <h:inputText id="cpf" value="#{ClientBean.clienteResource.cpf}"/>
+            	<th style="text-align: right;"/>
+               	<td>
+                  <h:inputText id="cpf" value="#{ClientBean.clienteResource.cpf}">
+                  	<f:passThroughAttribute name="placeholder" value="CPF" />
+                  </h:inputText>
                   <h:message for="cpf" errorClass="invalid"/>
-               </td>
+               	</td>
             </tr>
-            <tr>
-               <th style="text-align: right;">
-                  <h:outputLabel for="email" value="Email do Cliente:"/>
-               </th>
+            <tr>            
+               <th style="text-align: right;"/>
                <td>
-                  <h:inputText id="email" value="#{ClientBean.clienteResource.email}"/>
+                  <h:inputText id="email" value="#{ClientBean.clienteResource.email}">
+                  	<f:passThroughAttribute name="placeholder" value="Email" />
+                  </h:inputText>
                   <h:message for="email" errorClass="invalid"/>
                </td>
             </tr>
             <tr>
-               <th style="text-align: right;">
-                  <h:outputLabel for="dataNascimento" value="Nascimento do Cliente:"/>
-               </th>
+               <th style="text-align: right;"/>
                <td>
-                  <h:inputText id="dataNascimento" value="#{ClientBean.clienteResource.dataNascimento}" pt:placeholder="dd/MM/yyyy">
+                  <h:inputText id="dataNascimento" value="#{ClientBean.clienteResource.dataNascimento}" pt:placeholder="Nascimento (dd/MM/yyyy)">
                   	<f:convertDateTime pattern="dd/MM/yyyy"/>
                   </h:inputText>
                   <h:message for="dataNascimento" errorClass="invalid"/>
@@ -50,8 +48,8 @@
             </tr>
          </table>
          <p>
-            <h:commandButton id="salvar" value="Salvar Cliente" action="#{ClientBean.salvarCliente()}" />
-            <h:commandButton id="redirecionar" value="Mostrar Clientes" action="#{ClientBean.recuperarClientes()}" />
+            <h:commandButton id="salvar" value="Salvar" action="#{ClientBean.salvarCliente()}" />
+            <h:commandButton id="redirecionar" value="Listar" action="#{ClientBean.recuperarClientes()}" />
          </p>
       </h:form>
    </ui:define>

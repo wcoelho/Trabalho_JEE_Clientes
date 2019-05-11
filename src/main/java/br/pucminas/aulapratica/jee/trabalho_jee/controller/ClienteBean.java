@@ -16,18 +16,12 @@ import br.pucminas.aulapratica.jee.trabalho_jee.resource.ClienteResource;
 @ManagedBean(name="ClientBean")
 public class ClienteBean {
 
-	/*Neste ponto deve-se incluir o EJB para ser usado nos desafions 1 e 2*/
 	@EJB
 	ClienteBusiness clienteBusiness;
-
-	
-	/*Neste ponto, serão incluídas as propriedades de classe que serão usadas para 
-	 * exibir as informações em tela.*/
 	
 	private ClienteResource clienteResource = new ClienteResource();
-
-	/* Implementação da listagem de clientes conforme desafio 2 */
-	List<ClienteResource> clientes = new ArrayList<>();	
+	
+	private List<ClienteResource> clientes = new ArrayList<>();	
 
 	public ClienteResource getClienteResource() {
 		return clienteResource;
@@ -44,22 +38,22 @@ public class ClienteBean {
 	
 	public String recuperarClientes()
 	{
-		clienteBusiness.recuperarClientes();
-		return "clienteListagem.jsf";
+		clientes = clienteBusiness.recuperarClientes();
+		return "clienteListagem";
 	}
 	
 	public String cadastrarCliente()
 	{
-		return "clienteCadastro.jsf";
+		return "clienteCadastro";
 	}
 
 	public void salvarCliente() {
 		FacesMessage message;
 		try{
 			clienteBusiness.salvarCliente(this.clienteResource);
-			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "SUCESSO", "Cliente registrado com sucesso!");			
+			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cliente registrado com sucesso!", "");			
 		} catch (Exception e) {			
-			message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "ERRO", "Erro ao cadastrar cliente: " + e.getMessage());
+			message = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao tentar registrar cliente: " + e.getMessage(),"");
 		}
 		FacesContext.getCurrentInstance().addMessage("formCliente:messages", message);
 	}
