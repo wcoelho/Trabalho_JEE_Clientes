@@ -22,15 +22,15 @@ public class ClienteEntity implements Serializable {
 
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Long cliente_id;
 
 	@Size(min = 15, max = 300, message = "Nome deve ter de 15 a 300 caracteres")
-	String nome;
+	private String nome;
 
 	@Size(min = 11, max = 11, message = "CPF deve ter 11 caracteres")
-	String cpf;
+	private String cpf;
 
-	private Date dataNascimento;
+	private Date data_nascimento;
 
 	private String email;
 
@@ -38,12 +38,12 @@ public class ClienteEntity implements Serializable {
 		super();
 	}
 
-	public Long getId() {
-		return this.id;
+	public Long getClienteId() {
+		return this.cliente_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setClienteId(Long id) {
+		this.cliente_id = id;
 	}
 
 	public String getNome() {
@@ -63,11 +63,11 @@ public class ClienteEntity implements Serializable {
 	}
 
 	public Date getDataNascimento() {
-		return this.dataNascimento;
+		return this.data_nascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDataNascimento(Date data_nascimento) {
+		this.data_nascimento = data_nascimento;
 	}
 
 	public String getEmail() {

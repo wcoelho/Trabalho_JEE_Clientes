@@ -4,22 +4,22 @@ import java.util.Date;
 
 public class ClienteResource {
 
-	private Long id;
+	private Long cliente_id;
 
 	private String nome;
 
 	private String cpf;
 
-	private Date dataNascimento;
+	private Date data_nascimento;
 
 	private String email;
 
-	public Long getId() {
-		return id;
+	public Long getClienteId() {
+		return cliente_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setClienteId(Long cliente_id) {
+		this.cliente_id = cliente_id;
 	}
 
 	public String getNome() {
@@ -39,11 +39,11 @@ public class ClienteResource {
 	}
 
 	public Date getDataNascimento() {
-		return dataNascimento;
+		return data_nascimento;
 	}
 
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDataNascimento(Date data_nascimento) {
+		this.data_nascimento = data_nascimento;
 	}
 
 	public String getEmail() {

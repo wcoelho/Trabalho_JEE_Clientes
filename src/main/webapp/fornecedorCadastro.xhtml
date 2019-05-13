@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+            <h:form id="formFornecedor">
+      	<h:messages id="messages" infoStyle="color: blue" errorStyle="color:red" style="width: 100%" />
+         <h2>Cadastro de Fornecedor</h2>
+         <table cellspacing="5" cellpadding="5">
+            <tr>
+               <th style="text-align: right;"/>
+               <td>
+                  <h:inputText id="razaoSocial" value="#{SupplierBean.fornecedorResource.razaoSocial}">
+                  	<f:passThroughAttribute name="placeholder" value="Razão Social" />
+                  </h:inputText>
+                  <h:message for="razaoSocial" errorClass="invalid"/>
+               </td>
+            </tr>
+            <tr>
+            	<th style="text-align: right;"/>
+               	<td>
+                  <h:inputText id="cnpj" value="#{SupplierBean.fornecedorResource.cnpj}">
+                  	<f:passThroughAttribute name="placeholder" value="CNPJ" />
+                  </h:inputText>
+                  <h:message for="cnpj" errorClass="invalid"/>
+               	</td>
+            </tr>
+            <tr>
+            	<th style="text-align: right;"/>
+               	<td>
+                  <h:inputText id="endereco" value="#{SupplierBean.fornecedorResource.endereco}">
+                  	<f:passThroughAttribute name="placeholder" value="Endereço" />
+                  </h:inputText>
+                  <h:message for="endereco" errorClass="invalid"/>
+               	</td>
+            </tr>
+            <tr>
+            	<th style="text-align: right;"/>
+               	<td>
+                  <h:inputText id="inscricaoMunicipal" value="#{SupplierBean.fornecedorResource.inscricaoMunicipal}">
+                  	<f:passThroughAttribute name="placeholder" value="Inscrição Municipal" />
+                  </h:inputText>
+                  <h:message for="inscricaoMunicipal" errorClass="invalid"/>
+               	</td>
+            </tr>
+            <tr>            
+               <th style="text-align: right;"/>
+               <td>
+                  <h:inputText id="email" value="#{SupplierBean.fornecedorResource.email}">
+                  	<f:passThroughAttribute name="placeholder" value="Email" />
+                  </h:inputText>
+                  <h:message for="razaoSocial" errorClass="invalid"/>
+               </td>
+            </tr>
+         </table>
+         <p>
+            <h:commandButton id="salvar" value="Salvar" action="#{SupplierBean.salvarFornecedor()}" />
+            <h:commandButton id="redirecionar" value="Listar" action="#{SupplierBean.recuperarFornecedores()}" />
+            <h:commandButton id="home" value="Voltar" action="#{SupplierBean.irParaHome()}" />
+         </p>
+      </h:form>
+   </ui:define>
+</ui:composition>

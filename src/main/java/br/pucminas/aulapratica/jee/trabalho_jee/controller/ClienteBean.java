@@ -46,6 +46,11 @@ public class ClienteBean {
 	{
 		return "clienteCadastro";
 	}
+	
+	public String irParaHome()
+	{
+		return "inicial";
+	}
 
 	public void salvarCliente() {
 		FacesMessage message;

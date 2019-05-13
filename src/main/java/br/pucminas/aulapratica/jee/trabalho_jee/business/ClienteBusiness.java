@@ -38,7 +38,7 @@ public class ClienteBusiness {
 		clienteEntity.setCpf(clienteResource.getCpf());
 		clienteEntity.setDataNascimento(clienteResource.getDataNascimento());
 		clienteEntity.setEmail(clienteResource.getEmail());
-		clienteEntity.setId(clienteResource.getId());
+		clienteEntity.setClienteId(clienteResource.getClienteId());
 		
 		return clienteEntity;
 	}
@@ -50,7 +50,7 @@ public class ClienteBusiness {
 		clienteResource.setCpf(clienteEntity.getCpf());
 		clienteResource.setDataNascimento(clienteEntity.getDataNascimento());
 		clienteResource.setEmail(clienteEntity.getEmail());
-		clienteResource.setId(clienteEntity.getId());
+		clienteResource.setClienteId(clienteEntity.getClienteId());
 		
 		return clienteResource;
 	}

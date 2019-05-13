@@ -1,1 +1,1 @@
-<% response.sendRedirect("clienteCadastro.jsf"); %>
+<% response.sendRedirect("inicial.jsf"); %>
