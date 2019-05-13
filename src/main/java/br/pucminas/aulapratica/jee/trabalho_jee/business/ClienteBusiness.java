@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.pucminas.aulapratica.jee.trabalho_jee.entity.ClienteEntity;
+import br.pucminas.aulapratica.jee.trabalho_jee.exception.CpfJaExistenteException;
 import br.pucminas.aulapratica.jee.trabalho_jee.repository.ClienteRepository;
 import br.pucminas.aulapratica.jee.trabalho_jee.resource.ClienteResource;
 
@@ -17,7 +18,15 @@ public class ClienteBusiness {
 	public ClienteRepository clienteRepository;
 	
 	public void salvarCliente(ClienteResource clienteResource){		
-		clienteRepository.salvar(toEntity(clienteResource));
+		
+		ClienteEntity cliente = toEntity(clienteResource);
+		
+		List<ClienteEntity> lista_clientes_mesmo_cpf = clienteRepository.buscarPorCpf(clienteResource.getCpf());
+		if(lista_clientes_mesmo_cpf != null && lista_clientes_mesmo_cpf.size() > 0){
+			throw new CpfJaExistenteException();
+		}
+		
+		clienteRepository.salvar(cliente);
 	}
 	
 	public List<ClienteResource> recuperarClientes(){

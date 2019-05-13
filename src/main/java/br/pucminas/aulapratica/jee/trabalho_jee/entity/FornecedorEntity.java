@@ -3,21 +3,24 @@ package br.pucminas.aulapratica.jee.trabalho_jee.entity;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 /**
- * Entity implementation class for Entity: ClienteEntity
+ * Entity implementation class for Entity: FornecedorEntity
  *
  */
 @Entity
 @Table(name = "Fornecedor")
+@SequenceGenerator(name="fornecedorId", initialValue=2)
 public class FornecedorEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="fornecedorId")
 	private Long fornecedor_id;
 	
 	private String razao_social;	

@@ -19,9 +19,11 @@ Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clie
 -- O nome do cliente deve ter, no mínimo, 15 caracteres e, no máximo, 300 caracteres.  
 -- O CPF deve conter, exatamente, 11 caracteres.  
 -- O CPF deve ser único.  
--- Ao entrar dados incorretos nestes campos, deve-se apresentar uma mensagem de erro que já está implementada no código fonte.  
+-- Ao entrar dados incorretos nestes campos, deve-se apresentar uma mensagem de erro.  
 -- Caso o CPF já exista para outro cliente, deve-se lançar a exceção CpfJaExistenteException, a qual deve utilizar RuntimeExcpetion como ancestral.  
-* Dentro do contexto do Fornecedor, é obrigatório o preenchimento do cnpj, o qual deve ser único.   
+* Dentro do contexto do Fornecedor, é obrigatório o preenchimento do cnpj, sendo:  
+-- O CNPJ deve ser único.  
+-- Caso o CNPJ já exista para outro fornecedor, deve-se lançar a exceção CnpjJaExistenteException, a qual deve utilizar RuntimeExcpetion como ancestral.  
 * Para ambas entidades, os valores devem ser salvos no banco de dados e deve-se criar as estruturas e camadas necessárias para se armazenar os registros no banco de dados.
   
 #Notas

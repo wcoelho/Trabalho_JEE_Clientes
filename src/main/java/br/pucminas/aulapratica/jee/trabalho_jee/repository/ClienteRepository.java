@@ -25,7 +25,11 @@ public class ClienteRepository {
 	public List<ClienteEntity> recuperar() {
 		TypedQuery<ClienteEntity> query = em.createQuery("Select c from ClienteEntity c", ClienteEntity.class);		
 		return query.getResultList();
-	}
+	}	
 
+	public List<ClienteEntity> buscarPorCpf(String cpf) {
+		return em.createQuery("SELECT c FROM ClienteEntity c WHERE c.cpf = :cpf", ClienteEntity.class)
+				.setParameter("cpf", cpf).getResultList();
+	}
 
 }

@@ -26,6 +26,10 @@ public class FornecedorRepository {
 		TypedQuery<FornecedorEntity> query = em.createQuery("Select f from FornecedorEntity f", FornecedorEntity.class);		
 		return query.getResultList();
 	}
-
+	
+	public List<FornecedorEntity> buscarPorCnpj(String cnpj) {
+		return em.createQuery("SELECT f FROM FornecedorEntity f WHERE f.cnpj = :cnpj", FornecedorEntity.class)
+				.setParameter("cnpj", cnpj).getResultList();
+	}
 
 }

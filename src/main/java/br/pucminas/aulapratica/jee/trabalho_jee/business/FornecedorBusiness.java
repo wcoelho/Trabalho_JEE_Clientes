@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.pucminas.aulapratica.jee.trabalho_jee.entity.FornecedorEntity;
+import br.pucminas.aulapratica.jee.trabalho_jee.exception.CnpjJaExistenteException;
 import br.pucminas.aulapratica.jee.trabalho_jee.repository.FornecedorRepository;
 import br.pucminas.aulapratica.jee.trabalho_jee.resource.FornecedorResource;
 
@@ -17,7 +18,15 @@ public class FornecedorBusiness {
 	public FornecedorRepository fornecedorRepository;
 	
 	public void salvarFornecedor(FornecedorResource fornecedorResource){		
-		fornecedorRepository.salvar(toEntity(fornecedorResource));
+
+		FornecedorEntity fornecedor = toEntity(fornecedorResource);
+		
+		List<FornecedorEntity> lista_fornecedores_mesmo_cnpj = fornecedorRepository.buscarPorCnpj(fornecedorResource.getCnpj());
+		if(lista_fornecedores_mesmo_cnpj != null && lista_fornecedores_mesmo_cnpj.size() > 0){
+			throw new CnpjJaExistenteException();
+		}
+		
+		fornecedorRepository.salvar(fornecedor);
 	}
 	
 	public List<FornecedorResource> recuperarFornecedores(){
