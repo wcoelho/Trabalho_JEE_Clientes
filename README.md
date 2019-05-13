@@ -1,5 +1,7 @@
 # Trabalho JEE - Cadastro de Clientes e Fornecedores
 Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clientes e Fornecedores  
+
+**Aluno:** Walter de Oliveira Pinto Coelho  
   
 #Requisitos  
 
@@ -29,7 +31,7 @@ Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clie
 #Notas
 **URL que direciona para lista de opções de cadastro:** http://localhost:8080/trabalho\_jee\_walter_coelho/
   
-Cliente e Fornecedor iniciais adicionados automaticamente:  
+Cliente e Fornecedor iniciais adicionados automaticamente (com isso os novos cadastros se iniciam com id=2):  
   
 **Nome:** Administrador  
 **CPF:** 00011122233  
