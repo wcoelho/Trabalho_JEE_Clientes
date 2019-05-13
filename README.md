@@ -3,7 +3,7 @@ Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clie
 
 **Aluno:** Walter de Oliveira Pinto Coelho  
   
-#Requisitos  
+## Requisitos  
 
 * Deverá ser criada uma tela de cadastro de clientes com os seguintes dados:  
 -- Nome  
@@ -28,7 +28,7 @@ Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clie
 -- Caso o CNPJ já exista para outro fornecedor, deve-se lançar a exceção CnpjJaExistenteException, a qual deve utilizar RuntimeExcpetion como ancestral.  
 * Para ambas entidades, os valores devem ser salvos no banco de dados e deve-se criar as estruturas e camadas necessárias para se armazenar os registros no banco de dados.
   
-#Notas
+## Notas
 **URL que direciona para lista de opções de cadastro:** http://localhost:8080/trabalho\_jee\_walter_coelho/
   
 Cliente e Fornecedor iniciais adicionados automaticamente (com isso os novos cadastros se iniciam com id=2):  
