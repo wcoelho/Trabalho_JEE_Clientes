@@ -29,7 +29,7 @@ Trabalho de Laboratório da disciplina "Arquitetura JEE 2019" - Cadastro de Clie
 * Para ambas entidades, os valores devem ser salvos no banco de dados e deve-se criar as estruturas e camadas necessárias para se armazenar os registros no banco de dados.
   
 ## Notas
-**URL que direciona para lista de opções de cadastro:** http://localhost:8080/trabalho\_jee\_walter_coelho/
+**URL que direciona para lista de opções de cadastro:** http://localhost:8080/trabalho_jee_walter_coelho/
   
 Cliente e Fornecedor iniciais adicionados automaticamente (com isso os novos cadastros se iniciam com id=2):  
   
